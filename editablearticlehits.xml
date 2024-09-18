@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="system" version="5.0" method="upgrade">
+    <name>PLG_SYSTEM_EDITABLEARTICLEHITS</name>
+	<author>Web357 (Yiannis Christodoulou)</author>
+    <authorEmail>support@web357.com</authorEmail>
+	<authorUrl>https:/www.web357.com</authorUrl>
+    <creationDate>18-Sep-2024</creationDate>
+    <copyright>Copyright (C) 2014 - 2024 Web357. All rights reserved.</copyright>
+	<license>GNU/GPLv3, http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <version>1.0.0</version>
+    <description>PLG_SYSTEM_EDITABLEARTICLEHITS_XML_DESCRIPTION</description>
+
+    <files>
+        <filename plugin="editablearticlehits">editablearticlehits.php</filename>
+        <filename>README.md</filename>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.plg_system_editablearticlehits.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_system_editablearticlehits.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field 
+                    name="excluded_usergroups" 
+                    type="usergrouplist" 
+                    multiple="true"
+                    layout="joomla.form.field.list-fancy-select" 
+                    label="Exclude User Groups" 
+                    hint="Select the user groups that should NOT be allowed to edit the hits field. Leave empty to allow all user groups."
+                    class="chosen">
+                    <option value="-1">None</option>
+                </field>
+
+                <field 
+                    name="excluded_categories" 
+                    type="category"
+                    extension="com_content" 
+                    multiple="true"
+                    layout="joomla.form.field.list-fancy-select" 
+                    label="Exclude Categories" 
+                    hint="Select the categories for which the hits field should NOT be editable. Leave empty to allow all categories."
+                    class="chosen">
+                    <option value="-1">None</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
